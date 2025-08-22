@@ -8,8 +8,6 @@ app.use(cors({
   origin: "https://roblox-updater.github.io"
 }));
 
-app.use(express.static('public'));
-
 function getJSON(url) {
   return new Promise((resolve, reject) => {
     https.get(url, (res) => {
@@ -49,6 +47,11 @@ app.get("/v1/api/getimgfromunid", async (req, res) => {
     res.status(500).json({ error: error.message || "Server error" });
   }
 });
+
+app.get("/", async (req, res) => {
+  res.send("Hello World");
+});
+
 app.get("/v1/api/gametext", async (req, res) => {
   try {
     let g = "";
