@@ -49,7 +49,7 @@ app.get("/v1/api/getimgfromunid", async (req, res) => {
 });
 
 app.get("/", async (req, res) => {
-  res.send("Hello World");
+  res.json(JSON.parse({ message: "Hello World" });
 });
 
 app.get("/v1/api/gametext", async (req, res) => {
